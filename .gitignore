@@ -1,3 +1,16 @@
+### My Secret ### START
+secret/
+
+.yml
+.yaml
+.properties
+
+application.yml
+application.yaml
+application.properties
+
+### My Secret ### END
+
 HELP.md
 .gradle
 build/
