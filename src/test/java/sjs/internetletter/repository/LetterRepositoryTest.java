@@ -38,11 +38,13 @@ class LetterRepositoryTest {
     void 편지_모두조회() {
         //given
         Letter letter1 = new Letter();
+        letter1.setName("test name1");
         letter1.setTitle("test title1");
         letter1.setContent("test content1");
         letterRepository.save(letter1);
 
         Letter letter2 = new Letter();
+        letter2.setName("test name2");
         letter2.setTitle("test title2");
         letter2.setContent("test content2");
         letterRepository.save(letter2);

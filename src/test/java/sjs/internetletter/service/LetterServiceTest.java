@@ -22,6 +22,7 @@ class LetterServiceTest {
     void 편지추가() {
         //given
         Letter letter = new Letter();
+        letter.setName("name");
         letter.setTitle("title");
         letter.setContent("content");
 
@@ -36,11 +37,13 @@ class LetterServiceTest {
     void 편지_모두조회() {
         //given
         Letter letter1 = new Letter();
+        letter1.setName("test name1");
         letter1.setTitle("test title1");
         letter1.setContent("test content1");
         letterService.join(letter1);
 
         Letter letter2 = new Letter();
+        letter2.setName("test name2");
         letter2.setTitle("test title2");
         letter2.setContent("test content2");
         letterService.join(letter2);
