@@ -1,10 +1,6 @@
 ### My Secret ### START
 secret/
 
-.yml
-.yaml
-.properties
-
 application.yml
 application.yaml
 application.properties
