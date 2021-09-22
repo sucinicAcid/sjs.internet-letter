@@ -1,10 +1,11 @@
 package sjs.internetletter.web.letter.form;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 
-@Getter
+@Getter @Setter
 public class LetterForm {
 
     @NotBlank
