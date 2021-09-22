@@ -17,6 +17,7 @@ public class Letter {
     @Column(name = "LETTER_ID")
     private Long id;
 
+    private String name;
     private String title;
     private String content;
 }
