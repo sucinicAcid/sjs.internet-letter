@@ -16,7 +16,7 @@ public class LetterController {
     private final LetterService letterService;
 
     @GetMapping
-    public String addForm(@ModelAttribute LetterForm form) {
+    public String addForm(@ModelAttribute("form") LetterForm form) {
         return "letters/addForm";
     }
 }
