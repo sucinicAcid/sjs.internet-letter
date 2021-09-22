@@ -21,9 +21,9 @@ class LetterRepositoryTest {
     @Test
     void 편지추가() {
         //given
-        Letter letter = new Letter();
-        letter.setTitle("test title1");
-        letter.setContent("test content1");
+        Letter letter = Letter.createLetter("test name",
+                "test title",
+                "test content");
 
         //when
         Long savedId = letterRepository.save(letter);
@@ -36,16 +36,14 @@ class LetterRepositoryTest {
     @Test
     void 편지_모두조회() {
         //given
-        Letter letter1 = new Letter();
-        letter1.setName("test name1");
-        letter1.setTitle("test title1");
-        letter1.setContent("test content1");
+        Letter letter1 = Letter.createLetter("test name1",
+                "test title1",
+                "test content1");
         letterRepository.save(letter1);
 
-        Letter letter2 = new Letter();
-        letter2.setName("test name2");
-        letter2.setTitle("test title2");
-        letter2.setContent("test content2");
+        Letter letter2 = Letter.createLetter("test name2",
+                "test title2",
+                "test content2");
         letterRepository.save(letter2);
 
         //when
