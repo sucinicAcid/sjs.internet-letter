@@ -1,12 +1,9 @@
-package sjs.internetletter.service;
+package sjs.internetletter.domain.letter;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import sjs.internetletter.domain.Letter;
-import sjs.internetletter.repository.LetterRepository;
 
-import javax.persistence.EntityManager;
 import java.util.List;
 
 @Service

@@ -1,8 +1,7 @@
-package sjs.internetletter.repository;
+package sjs.internetletter.domain.letter;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
-import sjs.internetletter.domain.Letter;
 
 import javax.persistence.EntityManager;
 import java.util.List;

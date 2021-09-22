@@ -1,4 +1,4 @@
-package sjs.internetletter.domain.form;
+package sjs.internetletter.web.letter.form;
 
 import javax.validation.constraints.NotBlank;
 

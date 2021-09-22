@@ -4,8 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
-import sjs.internetletter.domain.Letter;
-import sjs.internetletter.repository.LetterRepository;
+import sjs.internetletter.domain.letter.Letter;
+import sjs.internetletter.domain.letter.LetterService;
 
 import java.util.List;
 

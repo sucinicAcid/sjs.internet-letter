@@ -1,4 +1,4 @@
-package sjs.internetletter.domain;
+package sjs.internetletter.domain.letter;
 
 import lombok.Getter;
 import lombok.Setter;
