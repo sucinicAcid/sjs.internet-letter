@@ -14,7 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class LetterService {
 
-    private LetterRepository letterRepository;
+    private final LetterRepository letterRepository;
 
     @Transactional
     public Long join(Letter letter) {
