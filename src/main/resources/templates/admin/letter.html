@@ -8,12 +8,15 @@
         .container {
             max-width: 560px;
         }
-
-        .field-error {
-            border-color: #dc3545;
-            color: #dc3545;
-        }
     </style>
+    <script language="javascript">
+        function agreeCheck(frm) {
+            if (frm.checkButton.disabled == true)
+                frm.checkButton.disabled = false
+            else
+                frm.checkButton.disabled = true
+        }
+    </script>
 </head>
 <body>
 
@@ -39,19 +42,27 @@
 
     <hr class="my-4">
 
-    <div class="row">
-        <div class="col">
-            <button class="w-100 btn btn-primary btn-lg"
-                    th:onclick="|location.href='@{/admin/letters/{letterId}/delete(letterId=${letter.id})}'|"
-                    type="button" th:text="#{button.delete}">삭제</button>
+    <form>
+        <div class="row">
+            <div class="col float-start">
+                <input type="checkbox" name="agree" onClick="agreeCheck(this.form)">
+                삭제합니다
+            </div>
+            <div class="col">
+                <button class="w-100 btn btn-primary btn-lg"
+                        th:onclick="|location.href='@{/admin/letters/{letterId}/delete(letterId=${letter.id})}'|"
+                        type="button" th:text="#{button.delete}"
+                        name="checkButton" disabled>삭제
+                </button>
+            </div>
+            <div class="col">
+                <button class="w-100 btn btn-secondary btn-lg"
+                        th:onclick="|location.href='@{/admin/letters}'|"
+                        type="button" th:text="#{button.cancel}">취소
+                </button>
+            </div>
         </div>
-        <div class="col">
-            <button class="w-100 btn btn-secondary btn-lg"
-                    th:onclick="|location.href='@{/admin/letters}'|"
-                    type="button" th:text="#{button.cancel}">취소
-            </button>
-        </div>
-    </div>
+    </form>
 
 </div> <!-- /container -->
 </body>

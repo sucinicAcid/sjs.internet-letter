@@ -32,4 +32,9 @@ public class AdminController {
         return "/admin/letter";
     }
 
+    @GetMapping("/letters/{letterId}/delete")
+    public String delete(@PathVariable Long letterId) {
+        letterService.removeOne(letterId);
+        return "redirect:/admin/letters";
+    }
 }
