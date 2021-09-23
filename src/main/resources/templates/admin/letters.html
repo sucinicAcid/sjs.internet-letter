@@ -24,7 +24,7 @@
             <tbody>
             <tr th:each="letter : ${letters}">
                 <td th:text="${letterStat.count}">번호</td>
-                <td><a th:href="@{|/admin/letters/${letter.id}|}">이름</a></td>
+                <td><a th:href="@{|/admin/letters/${letter.id}|}" th:text="${letter.name}">이름</a></td>
                 <td th:text="${letter.title}">제목</td>
             </tr>
             </tbody>
