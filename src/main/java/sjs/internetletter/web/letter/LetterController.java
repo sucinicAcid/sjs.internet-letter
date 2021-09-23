@@ -36,4 +36,9 @@ public class LetterController {
 
         return "redirect:/letters/complete";
     }
+
+    @GetMapping("/complete")
+    public String complete() {
+        return "/letters/complete";
+    }
 }
