@@ -42,7 +42,7 @@
     <div class="row">
         <div class="col">
             <button class="w-100 btn btn-primary btn-lg"
-                    th:onclick="|location.href='@{/admin/letters/{letterId}/edit(letterId=${letter.id})}'|"
+                    th:onclick="|location.href='@{/admin/letters/{letterId}/delete(letterId=${letter.id})}'|"
                     type="button" th:text="#{button.delete}">삭제</button>
         </div>
         <div class="col">
