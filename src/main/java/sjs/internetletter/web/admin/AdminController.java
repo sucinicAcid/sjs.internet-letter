@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import sjs.internetletter.domain.letter.Letter;
 import sjs.internetletter.domain.letter.LetterService;
@@ -23,4 +24,12 @@ public class AdminController {
         model.addAttribute("letters", letters);
         return "/admin/letters";
     }
+
+    @GetMapping("/letters/{letterId}")
+    public String letter(@PathVariable Long letterId, Model model) {
+        Letter findLetter = letterService.findOne(letterId);
+        model.addAttribute("letter", findLetter);
+        return "/admin/letter";
+    }
+
 }

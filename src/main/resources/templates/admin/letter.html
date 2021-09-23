@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="../css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 560px;
+        }
+
+        .field-error {
+            border-color: #dc3545;
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="py-5 text-center">
+        <h2 th:text="#{label.letter}">인편</h2>
+    </div>
+
+    <div>
+        <label for="name" th:text="#{label.letter.name}">이름</label>
+        <input type="text" id="name" class="form-control" th:value="${letter.name}" readonly>
+    </div>
+    <div>
+        <label for="title" th:text="#{label.letter.title}">제목</label>
+        <input type="text" id="title" class="form-control" th:value="${letter.title}" readonly>
+    </div>
+    <div>
+        <label for="content" th:text="#{label.letter.content}">내용</label>
+        <textarea id="content" class="form-control" rows="15" style="resize: none;"
+                  th:text="${letter.content}" readonly></textarea>
+    </div>
+
+    <hr class="my-4">
+
+    <div class="row">
+        <div class="col">
+            <button class="w-100 btn btn-primary btn-lg"
+                    th:onclick="|location.href='@{/admin/letters/{letterId}/edit(letterId=${letter.id})}'|"
+                    type="button" th:text="#{button.delete}">삭제</button>
+        </div>
+        <div class="col">
+            <button class="w-100 btn btn-secondary btn-lg"
+                    th:onclick="|location.href='@{/admin/letters}'|"
+                    type="button" th:text="#{button.cancel}">취소
+            </button>
+        </div>
+    </div>
+
+</div> <!-- /container -->
+</body>
+</html>
