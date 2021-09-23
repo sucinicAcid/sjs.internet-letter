@@ -21,4 +21,8 @@ public class LetterService {
     public List<Letter> findLetters() {
         return letterRepository.findAll();
     }
+
+    public Letter findOne(Long letterId) {
+        return letterRepository.find(letterId);
+    }
 }
