@@ -25,4 +25,9 @@ public class LetterService {
     public Letter findOne(Long letterId) {
         return letterRepository.find(letterId);
     }
+
+    @Transactional
+    public void removeOne(Long letterId) {
+        letterRepository.remove(letterId);
+    }
 }

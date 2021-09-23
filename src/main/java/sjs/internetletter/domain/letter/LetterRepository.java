@@ -25,4 +25,9 @@ public class LetterRepository {
         return em.createQuery("select l from Letter l", Letter.class)
                 .getResultList();
     }
+
+    public void remove(Long id) {
+        Letter findLetter = em.find(Letter.class, id);
+        em.remove(findLetter);
+    }
 }
