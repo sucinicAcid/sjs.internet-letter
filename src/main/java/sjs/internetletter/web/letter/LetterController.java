@@ -19,12 +19,12 @@ public class LetterController {
 
     private final LetterService letterService;
 
-    @GetMapping
+    @GetMapping("/add")
     public String addForm(@ModelAttribute("form") LetterForm form) {
         return "letters/addForm";
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public String addLetter(@Validated @ModelAttribute("form") LetterForm form,
                             BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
