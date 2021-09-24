@@ -34,7 +34,11 @@ public class AdminController {
 
     @GetMapping("/letters/{letterId}/delete")
     public String delete(@PathVariable Long letterId) {
-        letterService.removeOne(letterId);
+        Letter findLetter = letterService.findOne(letterId);
+        // admin이 임의로 letterId를 설정할 경우, repository에 해당 letterId가 없을 수 있음
+        if (findLetter != null) {
+            letterService.removeOne(letterId);
+        }
         return "redirect:/admin/letters";
     }
 }
