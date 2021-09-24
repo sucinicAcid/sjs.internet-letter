@@ -16,7 +16,7 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addInterceptor(new HomeInterceptor())
                 .order(1)
                 .addPathPatterns("/**")
-                .excludePathPatterns("/letters","/letters/add","/letters/complete",
+                .excludePathPatterns("/css/**","/letters","/letters/add","/letters/complete",
                         "/admin/letters", "/admin/letters/*","/admin/letters/*/delete");
     }
 }
