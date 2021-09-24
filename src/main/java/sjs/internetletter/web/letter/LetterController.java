@@ -1,6 +1,7 @@
 package sjs.internetletter.web.letter;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -15,6 +16,7 @@ import sjs.internetletter.web.letter.form.LetterForm;
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/letters")
+@Slf4j
 public class LetterController {
 
     private final LetterService letterService;
@@ -28,7 +30,7 @@ public class LetterController {
     public String addLetter(@Validated @ModelAttribute("form") LetterForm form,
                             BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "/letters/addForm";
+            return "letters/addForm";
         }
 
         Letter letter = Letter.createLetter(form.getName(), form.getTitle(), form.getContent());
@@ -39,6 +41,7 @@ public class LetterController {
 
     @GetMapping("/complete")
     public String complete() {
-        return "/letters/complete";
+        log.info("/letters/complete");
+        return "letters/complete";
     }
 }

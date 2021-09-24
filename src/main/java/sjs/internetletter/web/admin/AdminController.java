@@ -22,14 +22,14 @@ public class AdminController {
     public String letters(Model model) {
         List<Letter> letters = letterService.findLetters();
         model.addAttribute("letters", letters);
-        return "/admin/letters";
+        return "admin/letters";
     }
 
     @GetMapping("/letters/{letterId}")
     public String letter(@PathVariable Long letterId, Model model) {
         Letter findLetter = letterService.findOne(letterId);
         model.addAttribute("letter", findLetter);
-        return "/admin/letter";
+        return "admin/letter";
     }
 
     @GetMapping("/letters/{letterId}/delete")
